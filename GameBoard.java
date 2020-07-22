@@ -43,6 +43,7 @@ public class GameBoard {
 		int nbNeighboors = 0;
 		for (int i = x; i < x + 3; i++) {
 			for (int j = y; j < y + 3; j++) {
+				if (x == -1)
 				if (this.gameboard[i][j].getState())
 					nbNeighboors++;
 			}
@@ -59,9 +60,9 @@ public class GameBoard {
 		for (int i = 0; i < NB_ROWS; i++) {
 			for (int j = 0; j < NB_COLS; j++) {
 				if (this.gameboard[i][j].getState())
-					str += "* ";
+					str += "x ";
 				else
-					str += "  ";
+					str += "* ";
 			}
 			str += "\n";
 		}
