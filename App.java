@@ -8,9 +8,14 @@ public class App { // implements Runnable {
 
 	public static void main(String[] args) {
 		game.init();
-		game.checkCell();
 		System.out.println(game);
-       /*ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+		int i = 0;				//Si ya des croix au bord c'est pck bordure = cellule en vie 
+		while (i < 15) {
+			game.checkCell();
+			System.out.println(game);
+			i++;
+		}
+		/*ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
         Runnable task = new App();
         int initialDelay = 500;
         int periodicDelay = 2000;

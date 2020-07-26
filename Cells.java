@@ -8,7 +8,7 @@ public class Cells {
 	}
 
 	public boolean getState() {
-		return state;
+		return this.state;
 	}
 
 	public void setState(boolean state) {
