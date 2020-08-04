@@ -6,8 +6,8 @@ import javax.swing.JPanel;
 
 public class Window extends JFrame{
 
-	private final int width = 600;
-	private final int height = 600;
+	private final int width = 650;
+	private final int height = 650;
 	private static Paint background;
 	
 	public Window() {

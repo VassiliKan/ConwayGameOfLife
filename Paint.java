@@ -14,13 +14,15 @@ public class Paint extends JPanel {
 			
 			super.paintComponent(g);
 			
-			game.updateBoard(g);
-			
+			game.nextGen(g);
+			game.updateBoard();
+			game.draw(g);
+
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace(); }
-			
+				
 			this.repaint();
 		}
 		

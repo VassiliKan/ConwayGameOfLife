@@ -14,9 +14,8 @@ public class App {
 	
 	public static void main(String[] args) {
 		game.init();
-		System.out.println(game);
 		Window win = new Window();
-		//win.update(game);
+		win.update(game);
 	}
 }
 
