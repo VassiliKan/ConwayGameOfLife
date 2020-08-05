@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class GameBoard {
 	
 	// Need to combine draw and update method to optimize use of for loop
-	// Need to review countNeighboors method
 
 	public static final int NB_ROWS = 60;
 	public static final int NB_COLS = 60;
@@ -39,19 +38,19 @@ public class GameBoard {
 		int nbNeighboors = 0;
 		for (int x = currentCellX - 1; x <= currentCellX + 1; x++) {
 			for (int y = currentCellY - 1; y <= currentCellY + 1; y++) {
-				System.out.println("x2 : "+ x + " y2 : "+y);
-				if (y == -1 || y > NB_ROWS-1 || x == -1 || x > NB_COLS-1) {
-					if (this.gameboard[Math.abs(x-NB_COLS-1)][Math.abs(y-NB_ROWS-1)].getState())
+				try {
+					if (this.gameboard[x][y].getState())
 						nbNeighboors++;
-				} else if (this.gameboard[x][y].getState())
-					nbNeighboors++;
+				} catch (Exception e) {
+					
+				}
 			}
-		}
-		if (currentCell.getState()) 
+		}	
+		if (currentCell.getState())
 			return nbNeighboors - 1;
 		else 
 			return nbNeighboors;
-		}
+	}
 	
 	
 	public void nextGen(Graphics g) {
@@ -59,7 +58,7 @@ public class GameBoard {
 		for (int x = 0; x <= NB_ROWS-1; x++) {
 			for (int y = 0; y <= NB_COLS-1; y++) {
 				currentCell = this.gameboard[x][y];
-				System.out.println("x : "+ x + " y : "+y);
+				//System.out.println("x : "+ x + " y : "+y);
 				nbNeighboors = countNeighboors(currentCell, x, y);
 				if (nbNeighboors == 3 )
 					this.stepGameboard[x][y].setState(true);					
@@ -86,6 +85,7 @@ public class GameBoard {
 			}
 		}
 	}
+	
 	public void updateBoard() {
 		for (int x = 0; x < NB_ROWS-1; x++) {
 			for (int y = 0; y < NB_COLS-1; y++) {

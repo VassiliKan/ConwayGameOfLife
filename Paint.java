@@ -15,8 +15,8 @@ public class Paint extends JPanel {
 			super.paintComponent(g);
 			
 			game.nextGen(g);
-			game.updateBoard();
 			game.draw(g);
+			game.updateBoard();
 
 			try {
 				Thread.sleep(100);
