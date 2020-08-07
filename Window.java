@@ -8,7 +8,7 @@ public class Window extends JFrame{
 
 	private final int width = 650;
 	private final int height = 650;
-	private static Paint background;
+	private static Paint background, background2;
 	
 	public Window() {
 		this.setTitle("Conway game of life");
@@ -18,10 +18,15 @@ public class Window extends JFrame{
 		this.setVisible(true);
 		background = new Paint();
 		this.setContentPane(background);
+		//background2 = new Paint();
+		//this.setContentPane(background2);
 	}
 	
 	public static void update(GameBoard game) {
 		background.update(game);
 	}
 
+	/*public void drawMaze(Maze maze) {
+		background.drawMaze(maze);
+	}*/
 }

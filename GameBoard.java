@@ -6,8 +6,8 @@ public class GameBoard {
 	
 	// Need to combine draw and update method to optimize use of for loop
 
-	public static final int NB_ROWS = 60;
-	public static final int NB_COLS = 60;
+	public static final int NB_ROWS = 100;
+	public static final int NB_COLS = 100;
 	Cells[][] gameboard;
 	Cells[][] stepGameboard;
 	Cells currentCell;

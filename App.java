@@ -11,11 +11,14 @@ import java.util.concurrent.TimeUnit;
 public class App { 
 	
 	static GameBoard game = new GameBoard();
+	static Maze maze = new Maze();
 	
 	public static void main(String[] args) {
 		game.init();
 		Window win = new Window();
 		win.update(game);
+		//Window win2 = new Window();
+		//win2.drawMaze(maze);
 	}
 }
 
